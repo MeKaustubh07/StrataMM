@@ -1,0 +1,18 @@
+{
+  "name": "stratamm-poc",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Proof of concept: Strassen–Winograd matrix multiplication layered on stdlib's dgemm.",
+  "license": "Apache-2.0",
+  "main": "./lib",
+  "scripts": {
+    "test": "export NODE_PATH=${STDLIB:-$HOME/workspace/stdlib-js/stdlib}/lib/node_modules:${STDLIB:-$HOME/workspace/stdlib-js/stdlib}/node_modules && node test/test.differential.js && node test/test.reference.js",
+    "bench": "NODE_PATH=${STDLIB:-$HOME/workspace/stdlib-js/stdlib}/lib/node_modules node --expose-gc benchmark/indicative.js",
+    "bench:isolated": "NODE_PATH=${STDLIB:-$HOME/workspace/stdlib-js/stdlib}/lib/node_modules node benchmark/isolated.js",
+    "accuracy": "NODE_PATH=${STDLIB:-$HOME/workspace/stdlib-js/stdlib}/lib/node_modules node benchmark/accuracy.js"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">2.7.0"
+  }
+}
