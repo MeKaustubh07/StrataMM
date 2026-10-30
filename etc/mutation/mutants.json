@@ -1,0 +1,164 @@
+[
+	{
+		"id": "uchain-step20-sub-to-add",
+		"file": "lib/winograd.js",
+		"find": "sub( m, n, C, strideC1, strideC2, c21, C, strideC1, strideC2, offsetC, C, strideC1, strideC2, c21 );",
+		"replace": "add( m, n, C, strideC1, strideC2, c21, C, strideC1, strideC2, offsetC, C, strideC1, strideC2, c21 );",
+		"description": "U-chain step 20 flipped: C21 = U6 = U3 + P4 instead of U3 - P4"
+	},
+	{
+		"id": "peel-k-dropped",
+		"file": "lib/winograd.js",
+		"find": "if ( 2*k < K ) {",
+		"replace": "if ( false && 2*k < K ) {",
+		"description": "dynamic peeling: odd-K rank-1 update C[0:2m,0:2n] += α·A[:,K-1]·B[K-1,:] dropped"
+	},
+	{
+		"id": "peel-n-dropped",
+		"file": "lib/winograd.js",
+		"find": "if ( 2*n < N ) {",
+		"replace": "if ( false && 2*n < N ) {",
+		"description": "dynamic peeling: odd-N last column C[0:2m,N-1] never computed"
+	},
+	{
+		"id": "peel-m-dropped",
+		"file": "lib/winograd.js",
+		"find": "if ( 2*m < M ) {",
+		"replace": "if ( false && 2*m < M ) {",
+		"description": "dynamic peeling: odd-M last row C[M-1,:] never computed"
+	},
+	{
+		"id": "peel-n-partial-k",
+		"file": "lib/winograd.js",
+		"find": "dgemm( NT, NT, 2*m, 1, K, alpha,",
+		"replace": "dgemm( NT, NT, 2*m, 1, 2*k, alpha,",
+		"description": "dynamic peeling: odd-N last column summed over 2k instead of the full K (needs odd N and odd K together)"
+	},
+	{
+		"id": "peel-m-partial-n",
+		"file": "lib/winograd.js",
+		"find": "dgemm( NT, NT, 1, N, K, alpha,",
+		"replace": "dgemm( NT, NT, 1, 2*n, K, alpha,",
+		"description": "dynamic peeling: odd-M last row covers 2n instead of all N columns (corner C[M-1,N-1] never written; needs odd M and odd N together)"
+	},
+	{
+		"id": "x-undersized",
+		"file": "lib/winograd.js",
+		"find": "oy = ox + ( m*max( k, n ) );",
+		"replace": "oy = ox + ( m*k );",
+		"description": "workspace: X sized m×k instead of m×max(k,n), so P1 (m×n) overwrites Y (T2) when n > k"
+	},
+	{
+		"id": "child-workspace-overlaps-y",
+		"file": "lib/winograd.js",
+		"find": "ow = oy + ( k*n );",
+		"replace": "ow = oy;",
+		"description": "workspace: child workspace starts at Y (ow = oy), so recursive calls overwrite the parent's T operand (needs ≥ 2 levels)"
+	},
+	{
+		"id": "leaf-alpha-dropped",
+		"file": "lib/winograd.js",
+		"find": "return dgemm( NT, NT, M, N, K, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, 0.0, C, strideC1, strideC2, offsetC );",
+		"replace": "return dgemm( NT, NT, M, N, K, 1.0, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, 0.0, C, strideC1, strideC2, offsetC );",
+		"description": "α dropped in the recursion leaf call (the seven products are unscaled, the peels are scaled)"
+	},
+	{
+		"id": "leaf-accumulates",
+		"file": "lib/winograd.js",
+		"find": "return dgemm( NT, NT, M, N, K, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, 0.0, C, strideC1, strideC2, offsetC );",
+		"replace": "return dgemm( NT, NT, M, N, K, alpha, A, strideA1, strideA2, offsetA, B, strideB1, strideB2, offsetB, 1.0, C, strideC1, strideC2, offsetC );",
+		"description": "leaf call accumulates (β=1) instead of overwriting, so stale quadrant/C contents leak into products (C must never be read when β=0)"
+	},
+	{
+		"id": "temporaries-always-row-major",
+		"file": "lib/winograd.js",
+		"find": "var isRowMajor = require( '@stdlib/ndarray/base/assert/is-row-major' );",
+		"replace": "var isRowMajor = function isRowMajor() { return true; };",
+		"description": "layout mirroring broken: S/T/P1 temporaries always row-major regardless of the layouts of A, B, and C (values unchanged for exact data; only the leaf code paths differ)",
+		"expectKilledBy": "test.leaf_paths.js"
+	},
+	{
+		"id": "workspace-length-off-by-one",
+		"file": "lib/workspace_length.js",
+		"find": "return len;",
+		"replace": "return len - 1;",
+		"description": "workspaceLength one element short (the last element of the deepest Y falls outside the workspace)"
+	},
+	{
+		"id": "depth-ignores-levels",
+		"file": "lib/depth.js",
+		"find": "while ( d < levels && M > cutoff && N > cutoff && K > cutoff ) {",
+		"replace": "while ( M > cutoff && N > cutoff && K > cutoff ) {",
+		"description": "depth() ignores the levels cap (levels = 0 no longer delegates; guards use a too-large L)"
+	},
+	{
+		"id": "nonfinite-delegation-dropped",
+		"file": "lib/base.js",
+		"find": "maxA = maxAbs( M, K, A, sa1, sa2, offsetA );\n\tmaxB = maxAbs( K, N, B, sb1, sb2, offsetB );",
+		"replace": "maxA = maxAbs( M, K, A, sa1, sa2, offsetA ) || 0.0;\n\tmaxB = maxAbs( K, N, B, sb1, sb2, offsetB ) || 0.0;",
+		"description": "non-finite delegation dropped: the NaN max|·| signalling a NaN/±Inf element of op(A)/op(B) is replaced by 0, so the NaN checks and the NaN-safe product guard no longer delegate and non-finite operands run through Strassen–Winograd"
+	},
+	{
+		"id": "sum-guard-dropped",
+		"file": "lib/base.js",
+		"find": "pow( 4.0, L ) * max( maxA, maxB ) > SUM_LIMIT ||",
+		"replace": "false ||",
+		"description": "overflow guard: sum guard 4^L·max(max|a|,max|b|) > 2^1021 dropped"
+	},
+	{
+		"id": "product-guard-dropped",
+		"file": "lib/base.js",
+		"find": "!( bound < PRODUCT_LIMIT )",
+		"replace": "false",
+		"description": "overflow guard: product guard (bound >= 2^1023 or NaN) dropped"
+	},
+	{
+		"id": "product-guard-abs-alpha",
+		"file": "lib/base.js",
+		"find": "max( 1.0, abs( alpha ) )",
+		"replace": "abs( alpha )",
+		"description": "overflow guard: product bound uses |α| instead of max(1,|α|) (under-estimates when |α| < 1)"
+	},
+	{
+		"id": "product-guard-beta-term-dropped",
+		"file": "lib/base.js",
+		"find": "bound += abs( beta ) * maxAbs( M, N, C, strideC1, strideC2, offsetC );",
+		"replace": "bound += 0.0;",
+		"description": "overflow guard: |β|·max|c| term dropped from the product bound"
+	},
+	{
+		"id": "transB-ignored",
+		"file": "lib/base.js",
+		"find": "if ( isTransposed( transB ) ) {",
+		"replace": "if ( false ) {",
+		"description": "transB ignored on the fast path (B's strides are not swapped)"
+	},
+	{
+		"id": "conj-transpose-not-transposed",
+		"file": "lib/base.js",
+		"find": "return ( str !== 'no-transpose' );",
+		"replace": "return ( str === 'transpose' );",
+		"description": "fast path treats 'conjugate-transpose' as 'no-transpose' (strides not swapped)"
+	},
+	{
+		"id": "alpha-applied-twice",
+		"file": "lib/base.js",
+		"find": "return axpby( M, N, 1.0, W, sp1, sp2, 0, beta, C, strideC1, strideC2, offsetC );",
+		"replace": "return axpby( M, N, alpha, W, sp1, sp2, 0, beta, C, strideC1, strideC2, offsetC );",
+		"description": "β≠0 path: α applied again when combining P = α·op(A)·op(B) with β·C"
+	},
+	{
+		"id": "axpby-ignores-beta",
+		"file": "lib/axpby.js",
+		"find": "Y[ iy ] = ( beta*Y[ iy ] ) + ( alpha*X[ ix ] );",
+		"replace": "Y[ iy ] = Y[ iy ] + ( alpha*X[ ix ] );",
+		"description": "axpby ignores β (C = P + C instead of P + β·C)"
+	},
+	{
+		"id": "nrowsa-from-raw-transA",
+		"file": "lib/dgemmsw.js",
+		"find": "if ( isrm === ( ta === 'no-transpose' ) ) {",
+		"replace": "if ( ( isrm && transA === 'no-transpose' ) || ( !isrm && transA === 'transpose' ) ) {",
+		"description": "BLAS API: nrowsa for the LDA check computed from the raw transA as in dgemm (integer enums and 'conjugate-transpose' get the wrong bound)"
+	}
+]

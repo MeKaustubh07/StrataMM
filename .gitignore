@@ -1,0 +1,23 @@
+# Dependencies (anchored: `lib/node_modules/` holds the package itself and must stay tracked)
+/node_modules/
+lib/node_modules/**/node_modules/
+
+# Coverage and tooling output
+/coverage/
+/.nyc_output/
+/reports/
+
+# Research caches (regenerable; large)
+/research/cache/
+
+# Dry runs of the orchestrator (`--tiny`) are not campaign evidence
+/research/data/tiny-*/
+
+# Logs and OS files
+*.log
+!research/data/**/campaign.log
+!research/analysis/test/fixtures/**/campaign.log
+.DS_Store
+
+# Mutation testing work directories (etc/mutation/run.js)
+/.mutants/
