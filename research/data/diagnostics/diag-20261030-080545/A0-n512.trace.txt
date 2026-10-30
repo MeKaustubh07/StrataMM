@@ -1,0 +1,706 @@
+[marking 0x133df617b5f9 <JSFunction isPosixPathSeparator (sfi = 0x1a902cb858f9)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x133df617b5f9 <JSFunction isPosixPathSeparator (sfi = 0x1a902cb858f9)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[marking 0x133df617b6a9 <JSFunction normalizeString (sfi = 0x1a902cb85a79)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x133df617b6a9 <JSFunction normalizeString (sfi = 0x1a902cb85a79)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Cannot consider 0x86322b570 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x86322b570 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Considering 0x86322a700 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} for inlining with 0x86322be30 {0x193f67c567a1 <FeedbackVector[1]>}
+Inlining small function(s) at call site #84:JSCall
+Inlining 0x86322a700 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} into 0x86322a2b8 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>}
+Considering 0x86322a700 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} for inlining with 0x86322be30 {0x193f67c567a1 <FeedbackVector[1]>}
+Inlining small function(s) at call site #119:JSCall
+Inlining 0x86322a700 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} into 0x86322a2b8 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>}
+Cannot consider 0x86322b570 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x86322b570 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x86322b570 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+[completed compiling 0x133df617b5f9 <JSFunction isPosixPathSeparator (sfi = 0x1a902cb858f9)> (target TURBOFAN) - took 0.000, 0.416, 0.000 ms]
+[completed optimizing 0x133df617b5f9 <JSFunction isPosixPathSeparator (sfi = 0x1a902cb858f9)> (target TURBOFAN)]
+[completed compiling 0x133df617b6a9 <JSFunction normalizeString (sfi = 0x1a902cb85a79)> (target TURBOFAN) - took 0.000, 2.333, 0.000 ms]
+[completed optimizing 0x133df617b6a9 <JSFunction normalizeString (sfi = 0x1a902cb85a79)> (target TURBOFAN)]
+[marking 0x33be0066a629 <JSFunction (sfi = 0x3432d19c2991)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x33be0066a629 <JSFunction (sfi = 0x3432d19c2991)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x863222608 {0x1a902cb86979 <SharedFunctionInfo resolve>} for inlining with 0x863223560 {0x193f67c579c9 <FeedbackVector[30]>}
+Cannot consider 0x8632237c0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x8632237c0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x8632237c0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+1 candidate(s) for inlining:
+- candidate: JSCall node #32 with frequency 0.981818, 1 target(s):
+  - target: 0x863222608 {0x1a902cb86979 <SharedFunctionInfo resolve>}, bytecode size: 221
+Inlining 0x863222608 {0x1a902cb86979 <SharedFunctionInfo resolve>} into 0x8632222b8 {0x3432d19c2991 <SharedFunctionInfo>}
+Considering 0x86322c798 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>} for inlining with 0x86322cd30 {0x193f67c566f1 <FeedbackVector[6]>}
+Considering 0x86322c948 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>} for inlining with 0x86322d350 {0x193f67c567e1 <FeedbackVector[54]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #427 with frequency 1.52107, 1 target(s):
+  - target: 0x86322c798 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>}, bytecode size: 75
+- candidate: JSCall node #535 with frequency 0.981818, 1 target(s):
+  - target: 0x86322c948 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>}, bytecode size: 438, existing opt code's inlined bytecode size: 16
+Inlining 0x86322c798 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>} into 0x8632222b8 {0x3432d19c2991 <SharedFunctionInfo>}
+Considering 0x86322d4f8 {0x0b7a9e9947e9 <SharedFunctionInfo>} for inlining with 0x86322d668 {0x193f67c56759 <FeedbackVector[2]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #607 with frequency 1.52107, 1 target(s):
+  - target: 0x86322d4f8 {0x0b7a9e9947e9 <SharedFunctionInfo>}, bytecode size: 30
+- candidate: JSCall node #535 with frequency 0.981818, 1 target(s):
+  - target: 0x86322c948 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>}, bytecode size: 438, existing opt code's inlined bytecode size: 16
+Inlining 0x86322d4f8 {0x0b7a9e9947e9 <SharedFunctionInfo>} into 0x8632222b8 {0x3432d19c2991 <SharedFunctionInfo>} (inside try-block)
+Inlinee contains 1 calls without local exception handler; linking to surrounding exception handler.
+1 candidate(s) for inlining:
+- candidate: JSCall node #535 with frequency 0.981818, 1 target(s):
+  - target: 0x86322c948 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>}, bytecode size: 438, existing opt code's inlined bytecode size: 16
+Inlining 0x86322c948 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>} into 0x8632222b8 {0x3432d19c2991 <SharedFunctionInfo>}
+Cannot consider 0x8632237c0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x8632237c0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Considering 0x86322d300 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} for inlining with 0x86322f7a8 {0x193f67c567a1 <FeedbackVector[1]>}
+Inlining small function(s) at call site #753:JSCall
+Inlining 0x86322d300 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} into 0x8632222b8 {0x3432d19c2991 <SharedFunctionInfo>}
+Considering 0x86322d300 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} for inlining with 0x86322f7a8 {0x193f67c567a1 <FeedbackVector[1]>}
+Inlining small function(s) at call site #787:JSCall
+Inlining 0x86322d300 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} into 0x8632222b8 {0x3432d19c2991 <SharedFunctionInfo>}
+Cannot consider 0x8632237c0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x8632237c0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x8632237c0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+[completed compiling 0x33be0066a629 <JSFunction (sfi = 0x3432d19c2991)> (target TURBOFAN) - took 0.000, 4.542, 0.041 ms]
+[completed optimizing 0x33be0066a629 <JSFunction (sfi = 0x3432d19c2991)> (target TURBOFAN)]
+[marking 0x29745e387159 <JSFunction isFileType (sfi = 0x1a902cb95641)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x29745e387159 <JSFunction isFileType (sfi = 0x1a902cb95641)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x29745e387159 <JSFunction isFileType (sfi = 0x1a902cb95641)> (target TURBOFAN) - took 0.000, 0.459, 0.000 ms]
+[completed optimizing 0x29745e387159 <JSFunction isFileType (sfi = 0x1a902cb95641)> (target TURBOFAN)]
+[marking 0x1cb1aba36c39 <JSFunction (sfi = 0xb7a9e9947e9)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x1cb1aba36c39 <JSFunction (sfi = 0xb7a9e9947e9)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x1cb1aba36c39 <JSFunction (sfi = 0xb7a9e9947e9)> (target TURBOFAN) - took 0.000, 0.167, 0.000 ms]
+[completed optimizing 0x1cb1aba36c39 <JSFunction (sfi = 0xb7a9e9947e9)> (target TURBOFAN)]
+[marking 0x133df617bd61 <JSFunction dirname (sfi = 0x1a902cb86e31)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x133df617bd61 <JSFunction dirname (sfi = 0x1a902cb86e31)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x8632225f8 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>} for inlining with 0x863222df8 {0x193f67c566f1 <FeedbackVector[6]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #28 with frequency 0.998824, 1 target(s):
+  - target: 0x8632225f8 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>}, bytecode size: 75
+Inlining 0x8632225f8 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>} into 0x8632222b8 {0x1a902cb86e31 <SharedFunctionInfo dirname>}
+Considering 0x863223458 {0x0b7a9e9947e9 <SharedFunctionInfo>} for inlining with 0x863223d48 {0x193f67c56759 <FeedbackVector[2]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #282 with frequency 0.998824, 1 target(s):
+  - target: 0x863223458 {0x0b7a9e9947e9 <SharedFunctionInfo>}, bytecode size: 30
+Inlining 0x863223458 {0x0b7a9e9947e9 <SharedFunctionInfo>} into 0x8632222b8 {0x1a902cb86e31 <SharedFunctionInfo dirname>} (inside try-block)
+Inlinee contains 1 calls without local exception handler; linking to surrounding exception handler.
+[completed compiling 0x133df617bd61 <JSFunction dirname (sfi = 0x1a902cb86e31)> (target TURBOFAN) - took 0.000, 1.083, 0.000 ms]
+[completed optimizing 0x133df617bd61 <JSFunction dirname (sfi = 0x1a902cb86e31)> (target TURBOFAN)]
+[marking 0x29745e3878e9 <JSFunction nextPart (sfi = 0x1a902cb9c409)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x29745e3878e9 <JSFunction nextPart (sfi = 0x1a902cb9c409)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x29745e3878e9 <JSFunction nextPart (sfi = 0x1a902cb9c409)> (target TURBOFAN) - took 0.000, 0.209, 0.000 ms]
+[completed optimizing 0x29745e3878e9 <JSFunction nextPart (sfi = 0x1a902cb9c409)> (target TURBOFAN)]
+[marking 0x133df617bf41 <JSFunction resolve (sfi = 0x1a902cb86979)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x133df617bf41 <JSFunction resolve (sfi = 0x1a902cb86979)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x863222828 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>} for inlining with 0x863223398 {0x193f67c566f1 <FeedbackVector[6]>}
+Considering 0x863222ee8 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>} for inlining with 0x863223a98 {0x193f67c567e1 <FeedbackVector[54]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #97 with frequency 1.72443, 1 target(s):
+  - target: 0x863222828 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>}, bytecode size: 75
+- candidate: JSCall node #208 with frequency 1, 1 target(s):
+  - target: 0x863222ee8 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>}, bytecode size: 438, existing opt code's inlined bytecode size: 16
+Inlining 0x863222828 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>} into 0x8632222b8 {0x1a902cb86979 <SharedFunctionInfo resolve>}
+Considering 0x86322c590 {0x0b7a9e9947e9 <SharedFunctionInfo>} for inlining with 0x86322c658 {0x193f67c56759 <FeedbackVector[2]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #281 with frequency 1.72443, 1 target(s):
+  - target: 0x86322c590 {0x0b7a9e9947e9 <SharedFunctionInfo>}, bytecode size: 30
+- candidate: JSCall node #208 with frequency [marking 0x133df617bdb1 <JSFunction toNamespacedPath (sfi = 0x1a902cb86d89)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+1, 1 target(s):
+  - target: 0x863222ee8 {[compiling method 0x133df617bdb1 <JSFunction toNamespacedPath (sfi = 0x1a902cb86d89)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+0x1a902cb85a79 <SharedFunctionInfo normalizeString>}, bytecode size: 438, existing opt code's inlined bytecode size: 16
+Inlining 0x86322c590 {0x0b7a9e9947e9 <SharedFunctionInfo>} into 0x8632222b8 {0x1a902cb86979 <SharedFunctionInfo resolve>} (inside try-block)
+Inlinee contains 1 calls without local exception handler; linking to surrounding exception handler.
+1 candidate(s) for inlining:
+- candidate: JSCall node #208 with frequency 1, 1 target(s):
+  - target: 0x863222ee8 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>}, bytecode size: 438, existing opt code's inlined bytecode size: 16
+Inlining 0x863222ee8 {0x1a902cb85a79 <SharedFunctionInfo normalizeString>} into 0x8632222b8 {0x1a902cb86979 <SharedFunctionInfo resolve>}
+[completed compiling 0x133df617bdb1 <JSFunction toNamespacedPath (sfi = 0x1a902cb86d89)> (target TURBOFAN) - took 0.000, 0.125, 0.000 ms]
+[completed optimizing 0x133df617bdb1 <JSFunction toNamespacedPath (sfi = 0x1a902cb86d89)> (target TURBOFAN)]
+Cannot consider 0x8632232c8 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x8632232c8 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Considering 0x863223a20 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} for inlining with 0x86322d698 {0x193f67c567a1 <FeedbackVector[1]>}
+Inlining small function(s) at call site #429:JSCall
+Inlining 0x863223a20 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} into 0x8632222b8 {0x1a902cb86979 <SharedFunctionInfo resolve>}
+Considering 0x863223a20 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} for inlining with 0x86322d698 {0x193f67c567a1 <FeedbackVector[1]>}
+Inlining small function(s) at call site #463:JSCall
+Inlining 0x863223a20 {0x1a902cb858f9 <SharedFunctionInfo isPosixPathSeparator>} into 0x8632222b8 {0x1a902cb86979 <SharedFunctionInfo resolve>}
+Cannot consider 0x8632232c8 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x8632232c8 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x8632232c8 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+[marking 0x33be00669601 <JSFunction stat (sfi = 0xb7a9e9bfe29)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x33be00669601 <JSFunction stat (sfi = 0xb7a9e9bfe29)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x863886608 {0x1a902cb86d89 <SharedFunctionInfo toNamespacedPath>} for inlining with 0x863887300 {0x2bb1d639fa29 <FeedbackVector[0]>}
+Inlining small function(s) at call site #32:JSCall
+Inlining 0x863886608 {0x1a902cb86d89 <SharedFunctionInfo toNamespacedPath>} into 0x8638862b8 {0x0b7a9e9bfe29 <SharedFunctionInfo stat>}
+Cannot consider 0x863886710 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+[completed compiling 0x33be00669601 <JSFunction stat (sfi = 0xb7a9e9bfe29)> (target TURBOFAN) - took 0.000, 0.500, 0.000 ms]
+[completed optimizing 0x33be00669601 <JSFunction stat (sfi = 0xb7a9e9bfe29)> (target TURBOFAN)]
+[completed compiling 0x133df617bf41 <JSFunction resolve (sfi = 0x1a902cb86979)> (target TURBOFAN) - took 0.000, 3.125, 0.000 ms]
+[completed optimizing 0x133df617bf41 <JSFunction resolve (sfi = 0x1a902cb86979)> (target TURBOFAN)]
+[marking 0x29745e38a329 <JSFunction realpathSync (sfi = 0x1a902cb9c4c9)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x29745e38a329 <JSFunction realpathSync (sfi = 0x1a902cb9c4c9)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x8632225f8 {0x1a902cbaab59 <SharedFunctionInfo getOptions>} for inlining with 0x863828948 {0x2bb1d63a1329 <FeedbackVector[16]>}
+Considering 0x8632226f0 {0x1a902cb8d331 <SharedFunctionInfo toPathIfFileURL>} for inlining with 0x8638289d0 {0x2bb1d63a3061 <FeedbackVector[4]>}
+Inlining small function(s) at call site #44:JSCall
+Inlining 0x8632226f0 {0x1a902cb8d331 <SharedFunctionInfo toPathIfFileURL>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+Considering 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>} for inlining with 0x863829b28 {0x2bb1d63a13e1 <FeedbackVector[10]>}
+Considering 0x863222c18 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>} for inlining with 0x863829b88 {0x193f67c566f1 <FeedbackVector[6]>}
+Considering 0x863222d68 {0x1a902cb86979 <SharedFunctionInfo resolve>} for inlining with 0x86382a048 {0x193f67c579c9 <FeedbackVector[30]>}
+Considering 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>} for inlining with 0x86382a708 {0x193f67c57fd9 <FeedbackVector[2]>}
+Considering 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>} for inlining with 0x86382a768 {0x193f67c57981 <FeedbackVector[2]>}
+Considering 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>} for inlining with 0x86382a7c8 {0x2bb1d63a1af1 <FeedbackVector[10]>}
+Considering 0x863223cc0 {0x1a902cb9c409 <SharedFunctionInfo nextPart>} for inlining with 0x86382ad38 {0x2bb1d63934b9 <FeedbackVector[2]>}
+Inlining small function(s) at call site #266:JSCall
+Inlining 0x863223cc0 {0x1a902cb9c409 <SharedFunctionInfo nextPart>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+Considering 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>} for inlining with 0x86382b540 {0x2bb1d6393451 <FeedbackVector[6]>}
+Considering 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>} for inlining with 0x86382b540 {0x2bb1d6393451 <FeedbackVector[6]>}
+Considering 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>} for inlining with 0x86382b540 {0x2bb1d6393451 <FeedbackVector[6]>}
+Cannot consider 0x863222f18 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x863222f18 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x863222f18 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Considering 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>} for inlining with 0x86382bfa0 {0x2bb1d63aeac9 <FeedbackVector[12]>}
+11 candidate(s) for inlining:
+- candidate: JSCall node #500 with frequency 5.70097, 1 target(s):
+  - target: 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>}, bytecode size: 34
+- candidate: JSCall node #466 with frequency 5.70097, 1 target(s):
+  - target: 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>}, bytecode size: 34
+- candidate: JSCall node #611 with frequency 1.29651, 1 target(s):
+  - target: 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>}, bytecode size: 34
+- candidate: JSCall node #91 with frequency 0.998058, 1 target(s):
+  - target: 0x863222d68 {0x1a902cb86979 <SharedFunctionInfo resolve>}, bytecode size: 221, existing opt code's inlined bytecode size: 559
+- candidate: JSCall node #72 with frequency 0.998058, 1 target(s):
+  - target: 0x863222c18 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>}, bytecode size: 75
+- candidate: JSCall node #28 with frequency 0.998058, 1 target(s):
+  - target: 0x8632225f8 {0x1a902cbaab59 <SharedFunctionInfo getOptions>}, bytecode size: 135
+- candidate: JSCall node #775 with frequency 0.996887, 1 target(s):
+  - target: 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>}, bytecode size: 45
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+Inlining 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+10 candidate(s) for inlining:
+- candidate: JSCall node #466 with frequency 5.70097, 1 target(s):
+  - target: 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>}, bytecode size: 34
+- candidate: JSCall node #611 with frequency 1.29651, 1 target(s):
+  - target: 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>}, bytecode size: 34
+- candidate: JSCall node #91 with frequency 0.998058, 1 target(s):
+  - target: 0x863222d68 {0x1a902cb86979 <SharedFunctionInfo resolve>}, bytecode size: 221, existing opt code's inlined bytecode size: 559
+- candidate: JSCall node #72 with frequency 0.998058, 1 target(s):
+  - target: 0x863222c18 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>}, bytecode size: 75
+- candidate: JSCall node #28 with frequency 0.998058, 1 target(s):
+  - target: 0x8632225f8 {0x1a902cbaab59 <SharedFunctionInfo getOptions>}, bytecode size: 135
+- candidate: JSCall node #775 with frequency 0.996887, 1 target(s):
+  - target: 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>}, bytecode size: 45
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+Inlining 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+9 candidate(s) for inlining:
+- candidate: JSCall node #611 with frequency 1.29651, 1 target(s):
+  - target: 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>}, bytecode size: 34
+- candidate: JSCall node #91 with frequency 0.998058, 1 target(s):
+  - target: 0x863222d68 {0x1a902cb86979 <SharedFunctionInfo resolve>}, bytecode size: 221, existing opt code's inlined bytecode size: 559
+- candidate: JSCall node #72 with frequency 0.998058, 1 target(s):
+  - target: 0x863222c18 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>}, bytecode size: 75
+- candidate: JSCall node #28 with frequency 0.998058, 1 target(s):
+  - target: 0x8632225f8 {0x1a902cbaab59 <SharedFunctionInfo getOptions>}, bytecode size: 135
+- candidate: JSCall node #775 with frequency 0.996887, 1 target(s):
+  - target: 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>}, bytecode size: 45
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+Inlining 0x8638281d8 {0x1a902cb95641 <SharedFunctionInfo isFileType>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+8 candidate(s) for inlining:
+- candidate: JSCall node #91 with frequency 0.998058, 1 target(s):
+  - target: 0x863222d68 {0x1a902cb86979 <SharedFunctionInfo resolve>}, bytecode size: 221, existing opt code's inlined bytecode size: 559
+- candidate: JSCall node #72 with frequency 0.998058, 1 target(s):
+  - target: 0x863222c18 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>}, bytecode size: 75
+- candidate: JSCall node #28 with frequency 0.998058, 1 target(s):
+  - target: 0x8632225f8 {0x1a902cbaab59 <SharedFunctionInfo getOptions>}, bytecode size: 135
+- candidate: JSCall node #775 with frequency 0.996887, 1 target(s):
+  - target: 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>}, bytecode size: 45
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+Inlining 0x863222c18 {0x0b7a9e98a2c9 <SharedFunctionInfo wrappedFn>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+Considering 0x86382ca60 {0x1a902cbac771 <SharedFunctionInfo>} for inlining with 0x86382cb08 {0x2bb1d63a1a31 <FeedbackVector[17]>}
+7 candidate(s) for inlining:
+- candidate: JSCall node #1290 with frequency 0.998058, 1 target(s):
+  - target: 0x86382ca60 {0x1a902cbac771 <SharedFunctionInfo>}, bytecode size: 149
+- candidate: JSCall node #28 with frequency 0.998058, 1 target(s):
+  - target: 0x8632225f8 {0x1a902cbaab59 <SharedFunctionInfo getOptions>}, bytecode size: 135
+- candidate: JSCall node #775 with frequency 0.996887, 1 target(s):
+  - target: 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>}, bytecode size: 45
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+Inlining 0x86382ca60 {0x1a902cbac771 <SharedFunctionInfo>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>} (inside try-block)
+Inlinee contains 7 calls without local exception handler; linking to surrounding exception handler.
+Considering 0x86382cd10 {0x0b7a9e99b399 <SharedFunctionInfo isUint8Array>} for inlining with 0x86382ce88 {0x2bb1d63a1469 <FeedbackVector[3]>}
+Inlining small function(s) at call site #1377:JSCall
+Inlining 0x86382cd10 {0x0b7a9e99b399 <SharedFunctionInfo isUint8Array>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>} (inside try-block)
+Inlinee contains 2 calls without local exception handler; linking to surrounding exception handler.
+6 candidate(s) for inlining:
+- candidate: JSCall node #28 with frequency 0.998058, 1 target(s):
+  - target: 0x8632225f8 {0x1a902cbaab59 <SharedFunctionInfo getOptions>}, bytecode size: 135
+- candidate: JSCall node #775 with frequency 0.996887, 1 target(s):
+  - target: 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>}, bytecode size: 45
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+Inlining 0x8632225f8 {0x1a902cbaab59 <SharedFunctionInfo getOptions>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+Considering 0x86382f2d8 {0x1a902cba9bf9 <SharedFunctionInfo assertEncoding>} for inlining with 0x863840320 {0x2bb1d63a12c1 <FeedbackVector[6]>}
+6 candidate(s) for inlining:
+- candidate: JSCall node #1766 with frequency 0.996929, 1 target(s):
+  - target: 0x86382f2d8 {0x1a902cba9bf9 <SharedFunctionInfo assertEncoding>}, bytecode size: 48
+- candidate: JSCall node #775 with frequency 0.996887, 1 target(s):
+  - target: 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>}, bytecode size: 45
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+Inlining 0x86382f2d8 {0x1a902cba9bf9 <SharedFunctionInfo assertEncoding>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+Considering 0x8638407b8 {0x0b7a9e9af899 <SharedFunctionInfo isEncoding>} for inlining with 0x863840d38 {0x2bb1d63a4851 <FeedbackVector[5]>}
+6 candidate(s) for inlining:
+- candidate: JSCall node #775 with frequency 0.996887, 1 target(s):
+  - target: 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>}, bytecode size: 45
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+- candidate: JSCall node #1889 with frequency 0.398547, 1 target(s):
+  - target: 0x8638407b8 {0x0b7a9e9af899 <SharedFunctionInfo isEncoding>}, bytecode size: 30
+Inlining 0x863829a60 {0x1a902cb8a829 <SharedFunctionInfo isURL>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+5 candidate(s) for inlining:
+- candidate: JSCall node #754 with frequency 0.668605, 1 target(s):
+  - target: 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>}, bytecode size: 72
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+- candidate: JSCall node #1889 with frequency 0.398547, 1 target(s):
+  - target: 0x8638407b8 {0x0b7a9e9af899 <SharedFunctionInfo isEncoding>}, bytecode size: 30
+Inlining 0x863828820 {0x1a902cb9c349 <SharedFunctionInfo encodeRealpathResult>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+4 candidate(s) for inlining:
+- candidate: JSCall node #181 with frequency 0.667961, 1 target(s):
+  - target: 0x863223b48 {0x1a902cb9c289 [marking 0x33be00667899 <SharedFunctionInfo splitRoot>}, bytecode size: 62
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {<JSFunction get hasSubscribers (sfi = 0x1a902cbb3131)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+- candidate: JSCall node #1889 with frequency 0.398547, 1 target(s):
+  - target: 0x8638407b8 {0x0b7a9e9af899 <SharedFunctionInfo isEncoding>}, bytecode size: 30
+Inlining 0x863223b48 {0x1a902cb9c289 <SharedFunctionInfo splitRoot>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+[compiling method 0x33be00667899 <JSFunction get hasSubscribers (sfi = 0x1a902cbb3131)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+3 candidate(s) for inlining:
+- candidate: JSConstruct node #166 with frequency 0.667961, 1 target(s):
+  - target: 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>}, bytecode size: 43
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+- candidate: JSCall node #1889 with frequency 0.398547, 1 target(s):
+  - target: 0x8638407b8 {0x0b7a9e9af899 <SharedFunctionInfo isEncoding>}, bytecode size: 30
+Inlining 0x8632239f8 {0x0b7a9e981881 <SharedFunctionInfo SafeSet>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+[completed compiling 0x33be00667899 <JSFunction get hasSubscribers (sfi = 0x1a902cbb3131)> (target TURBOFAN) - took 0.000, 0.083, 0.000 ms]
+[completed optimizing 0x33be00667899 <JSFunction get hasSubscribers (sfi = 0x1a902cbb3131)> (target TURBOFAN)]
+Cannot consider 0x863222f18 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+Cannot consider 0x863222f18 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+2 candidate(s) for inlining:
+- candidate: JSConstruct node #151 with frequency 0.667961, 1 target(s):
+  - target: 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>}, bytecode size: 43
+- candidate: JSCall node #1889 with frequency 0.398547, 1 target(s):
+  - target: 0x8638407b8 {0x0b7a9e9af899 <SharedFunctionInfo isEncoding>}, bytecode size: 30
+Inlining 0x863223078 {0x0b7a9e981701 <SharedFunctionInfo SafeMap>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+Cannot consider 0x863222f18 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+1 candidate(s) for inlining:
+- candidate: JSCall node #1889 with frequency 0.398547, 1 target(s):
+  - target: 0x8638407b8 {0x0b7a9e9af899 <SharedFunctionInfo isEncoding>}, bytecode size: 30
+Inlining 0x8638407b8 {0x0b7a9e9af899 <SharedFunctionInfo isEncoding>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+Considering 0x863841d48 {0x0b7a9e997579 <SharedFunctionInfo normalizeEncoding>} for inlining with 0x863841e88 {0x2bb1d63a6a61 <FeedbackVector[4]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #2351 with frequency 0.397421, 1 target(s):
+  - target: 0x863841d48 {0x0b7a9e997579 <SharedFunctionInfo normalizeEncoding>}, bytecode size: 30
+Inlining 0x863841d48 {0x0b7a9e997579 <SharedFunctionInfo normalizeEncoding>} into 0x8632222b8 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>}
+[marking 0x33be0066b421 <JSFunction tryExtensions (sfi = 0x3432d19c2191)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x33be0066b421 <JSFunction tryExtensions (sfi = 0x3432d19c2191)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x863306788 {0x3432d19c20d1 <SharedFunctionInfo tryFile>} for inlining with 0x863306b70 {0x2bb1d63a2911 <FeedbackVector[11]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #49 with frequency 2.3306, 1 target(s):
+  - target: 0x863306788 {0x3432d19c20d1 <SharedFunctionInfo tryFile>}, bytecode size: 66
+Inlining 0x863306788 {0x3432d19c20d1 <SharedFunctionInfo tryFile>} into 0x8633062b8 {0x3432d19c2191 <SharedFunctionInfo tryExtensions>}
+Considering 0x863307010 {0x0b7a9e9bfe29 <SharedFunctionInfo stat>} for inlining with 0x8633072e0 {0x2bb1d639fa61 <FeedbackVector[17]>}
+Considering 0x863307118 {0x0b7a9e99ae79 <SharedFunctionInfo getOptionValue>} for inlining with 0x863307340 {0x193f67c56ec1 <FeedbackVector[4]>}
+Inlining small function(s) at call site #136:JSCall
+Inlining 0x863307118 {0x0b7a9e99ae79 <SharedFunctionInfo getOptionValue>} into 0x8633062b8 {0x3432d19c2191 <SharedFunctionInfo tryExtensions>}
+Considering 0x8633073d0 {0x0b7a9e99aab9 <SharedFunctionInfo getCLIOptionsFromBinding>} for inlining with 0x8633074c0 {0x193f67c56e71 <FeedbackVector[3]>}
+Inlining small function(s) at call site #191:JSCall
+Inlining 0x8633073d0 {0x0b7a9e99aab9 <SharedFunctionInfo getCLIOptionsFromBinding>} into 0x8633062b8 {0x3432d19c2191 <SharedFunctionInfo tryExtensions>}
+Considering 0x863307220 {0x1a902cb920f9 <SharedFunctionInfo toRealPath>} for inlining with 0x863307f78 {0x2bb1d63a3ca9 <FeedbackVector[9]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #104 with frequency 2.3298, 1 target(s):
+  - target: 0x863307010 {0x0b7a9e9bfe29 <SharedFunctionInfo stat>}, bytecode size: 89, existing opt code's inlined bytecode size: 3
+- candidate: JSCall node #168 with frequency 0.291626, 1 target(s):
+  - target: 0x863307220 {0x1a902cb920f9 <SharedFunctionInfo toRealPath>}, bytecode size: 42
+Inlining 0x863307010 {0x0b7a9e9bfe29 <SharedFunctionInfo stat>} into 0x8633062b8 {0x3432d19c2191 <SharedFunctionInfo tryExtensions>}
+Considering 0x863888088 {0x1a902cb86d89 <SharedFunctionInfo toNamespacedPath>} for inlining with 0x863888830 {0x2bb1d639fa29 <FeedbackVector[0]>}
+Inlining small function(s) at call site #278:JSCall
+Inlining 0x863888088 {0x1a902cb86d89 <SharedFunctionInfo toNamespacedPath>} into 0x8633062b8 {0x3432d19c2191 <SharedFunctionInfo tryExtensions>}
+Cannot consider 0x863307ee0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+1 candidate(s) for inlining:
+- candidate: JSCall node #168 with frequency 0.291626, 1 target(s):
+  - target: 0x863307220 {0x1a902cb920f9 <SharedFunctionInfo toRealPath>}, bytecode size: 42
+Inlining 0x863307220 {0x1a902cb920f9 <SharedFunctionInfo toRealPath>} into 0x8633062b8 {0x3432d19c2191 <SharedFunctionInfo tryExtensions>}
+Cannot consider 0x86388a240 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>} for inlining (reason: 5)
+Cannot consider 0x86388a240 {0x1a902cb9c4c9 <SharedFunctionInfo realpathSync>} for inlining (reason: 5)
+[completed compiling 0x29745e38a329 <JSFunction realpathSync (sfi = 0x1a902cb9c4c9)> (target TURBOFAN) - took 0.000, 6.083, 0.042 ms]
+[completed optimizing 0x29745e38a329 <JSFunction realpathSync (sfi = 0x1a902cb9c4c9)> (target TURBOFAN)]
+[completed compiling 0x33be0066b421 <JSFunction tryExtensions (sfi = 0x3432d19c2191)> (target TURBOFAN) - took 0.000, 1.500, 0.000 ms]
+[completed optimizing 0x33be0066b421 <JSFunction tryExtensions (sfi = 0x3432d19c2191)> (target TURBOFAN)]
+[marking 0x33be00644bf1 <JSFunction wrappedFn (sfi = 0xb7a9e98a2c9)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x33be00644bf1 <JSFunction wrappedFn (sfi = 0xb7a9e98a2c9)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x33be00644bf1 <JSFunction wrappedFn (sfi = 0xb7a9e98a2c9)> (target TURBOFAN) - took 0.000, 0.500, 0.000 ms]
+[completed optimizing 0x33be00644bf1 <JSFunction wrappedFn (sfi = 0xb7a9e98a2c9)> (target TURBOFAN)]
+[bailout (kind: deopt-eager, reason: wrong map): begin. deoptimizing 0x29745e38a329 <JSFunction realpathSync (sfi = 0x1a902cb9c4c9)>, 0x0caa4dc34039 <Code TURBOFAN>, opt id 10, bytecode offset 71, deopt exit 19, FP to SP delta 144, caller SP 0x00016fa56068, pc 0x00010b6e6d08]
+[marking 0x35ab5d64c499 <JSFunction mt19937 (sfi = 0x2c8d0ac8ddc1)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x35ab5d64c499 <JSFunction mt19937 (sfi = 0x2c8d0ac8ddc1)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x8633067b8 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x863306f10 {0x07637aa48f01 <FeedbackVector[64]>}
+Considering 0x8633067b8 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x863306f10 {0x07637aa48f01 <FeedbackVector[64]>}
+[marking 0x35ab5d64c4d9 <JSFunction normalized (sfi = 0x2c8d0ac8de19)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[marking 0x1528b1e45629 <JSFunction uniform (sfi = 0x2c8d0ac92661)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[marking 0x35ab5d64c1d9 <JSFunction uniform1 (sfi = 0x2c8d0ac92ae1)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x35ab5d64c1d9 <JSFunction uniform1 (sfi = 0x2c8d0ac92ae1)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x35ab5d64c499 <JSFunction mt19937 (sfi = 0x2c8d0ac8ddc1)> (target TURBOFAN) - took 0.000, 0.459, 0.000 ms]
+[completed optimizing 0x35ab5d64c499 <JSFunction mt19937 (sfi = 0x2c8d0ac8ddc1)> (target TURBOFAN)]
+[compiling method 0x1528b1e45629 <JSFunction uniform (sfi = 0x2c8d0ac92661)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x86330e5d8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>} for inlining with [compiling method 0x35ab5d64c4d9 <JSFunction normalized (sfi = 0x2c8d0ac8de19)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+0x86330e710 {0x07637aa49459 <FeedbackVector[6]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #20 with frequency 0.999334, 1 target(s):
+  - target: 0x86330e5d8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>}, bytecode size: 28
+Inlining 0x86330e5d8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>} into 0x86330e2b8 {0x2c8d0ac92ae1 <SharedFunctionInfo uniform1>}
+Considering 0x8633065d8 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>} for inlining with 0x8633067f8 {0x07637aa49229 <FeedbackVector[9]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #18 with frequency 0.999667, 1 target(s):
+  - target: 0x8633065d8 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>}, bytecode size: 42
+Inlining 0x8633065d8 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>} into 0x8633062a8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>}
+Considering 0x863306888 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} for inlining with 0x863306f90 {0x07637aa49139 <FeedbackVector[23]>}
+Considering 0x8633165a8 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} for inlining with 0x863316898 {0x07637aa49139 <FeedbackVector[23]>}
+Considering 0x86330ebb0 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>} for inlining with 0x86330edb0 {0x07637aa49229 <FeedbackVector[9]>}
+Considering 0x863306888 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} for inlining with 0x863306f90 {0x07637aa49139 <FeedbackVector[23]>}
+Considering 0x8633165a8 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} for inlining with 0x863316898 {0x07637aa49139 <FeedbackVector[23]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #42 with frequency 0.995503, 1 target(s):
+  - target: 0x86330ebb0 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>}, bytecode size: 42
+Inlining 0x86330ebb0 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>} into 0x86330e2b8 {0x2c8d0ac92ae1 <SharedFunctionInfo uniform1>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #24 with frequency 0.999428, 1 target(s):
+  - target: 0x8633165a8 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+- candidate: JSCall node #17 with frequency 0.984191, 1 target(s):
+  - target: 0x8633165a8 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+Inlining 0x8633165a8 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} into 0x8633162b8 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>}
+Considering 0x86330ee40 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} for inlining with 0x86330f0c8 {0x07637aa49139 <FeedbackVector[23]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #48 with frequency 0.999375, 1 target(s):
+  - target: 0x863306888 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+- candidate: JSCall node #56 with frequency 0.999083, 1 target(s):
+  - target: 0x863306888 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+[marking 0x3e2929601b59 <JSFunction twist (sfi = 0x1bfb787e7b89)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+Inlining 0x863306888 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} into 0x8633062a8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>}
+Considering 0x863316f00 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x863317708 {0x07637aa48f01 <FeedbackVector[64]>}
+Considering 0x86330ee40 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} for inlining with 0x86330f0c8 {0x07637aa49139 <FeedbackVector[23]>}
+Considering 0x8633071e8 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x863307910 {0x07637aa48f01 <FeedbackVector[64]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #17 with frequency 0.984191, 1 target(s):
+  - target: 0x8633165a8 {0x2c8d0ac8ddc1 [compiling method 0x3e2929601b59 <SharedFunctionInfo mt19937>}, bytecode size: 130
+<JSFunction twist (sfi = 0x1bfb787e7b89)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Inlining 0x8633165a8 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} into 0x8633162b8 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #56 with frequency 0.999083, 1 target(s):
+  - target: 0x863306888 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+Inlining 0x863306888 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} into 0x8633062a8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>}
+[marking 0x1bfb787d0c59 Considering <JSFunction fill (sfi = 0x2bb1d63959b1)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+0x863316f00 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x863317708 {0x07637aa48f01 <FeedbackVector[64]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #71 with frequency 0.995257, 1 target(s):
+  - target: 0x86330ee40 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+- candidate: JSCall node #79 with frequency 0.995011, 1 target(s):
+  - target: 0x86330ee40 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+Inlining 0x86330ee40 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} into 0x86330e2b8 {0x2c8d0ac92ae1 <SharedFunctionInfo uniform1>}
+Considering 0x8633071e8 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x863307910 {0x07637aa48f01 <FeedbackVector[64]>}
+Considering 0x86330f320 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x86330faa0 {0x07637aa48f01 <FeedbackVector[64]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #79 with frequency 0.995011, 1 target(s):
+  - target: 0x86330ee40 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+Inlining 0x86330ee40 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} into 0x86330e2b8 {0x2c8d0ac92ae1 <SharedFunctionInfo uniform1>}
+[OSR - setting osr urgency. function: fill, old urgency: 0, new urgency: 1]
+[OSR - compilation started. function: fill, osr offset: 54, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x1bfb787d0c59 <JSFunction fill (sfi = 0x2bb1d63959b1)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+Considering 0x86330f320 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x86330faa0 {[OSR - unavailable (failed or in progress). function: fill, osr offset: 54, mode: ConcurrencyMode::kConcurrent]
+0x07637aa48f01 <FeedbackVector[64]>}
+[completed compiling 0x35ab5d64c4d9 <JSFunction normalized (sfi = 0x2c8d0ac8de19)> (target TURBOFAN) - took 0.000, 1.000, 0.042 ms]
+[completed optimizing 0x35ab5d64c4d9 <JSFunction normalized (sfi = 0x2c8d0ac8de19)> (target TURBOFAN)]
+Considering 0x8633ae710 {0x2c8d0ac92ae1 <SharedFunctionInfo uniform1>} for inlining with 0x8633aea28 {0x07637aa494c1 <FeedbackVector[2]>}
+Inlining small function(s) at call site #68:JSCall
+Inlining 0x8633ae710 {0x2c8d0ac92ae1 <SharedFunctionInfo uniform1>} into 0x8633ae2b8 {0x2bb1d63959b1 <SharedFunctionInfo fill>}
+Considering 0x8633aeeb8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>} for inlining with 0x8633aef88 {0x07637aa49459 <FeedbackVector[6]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #110 with frequency 6850.04, 1 target(s):
+  - target: 0x8633aeeb8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>}, bytecode size: 28
+Inlining 0x8633aeeb8 {0x2c8d0ac92661 <SharedFunctionInfo uniform>} into 0x8633ae2b8 {0x2bb1d63959b1 <SharedFunctionInfo fill>}
+Considering 0x8633af090 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>} for inlining with 0x8633af2a0 {0x07637aa49229 <FeedbackVector[9]>}
+[completed compiling 0x1528b1e45629 <JSFunction uniform (sfi = 0x2c8d0ac92661)> (target TURBOFAN) - took 0.000, 1.208, 0.000 ms]
+[completed optimizing 0x1528b1e45629 <JSFunction uniform (sfi = 0x2c8d0ac92661)> (target TURBOFAN)]
+1 candidate(s) for inlining:
+- candidate: JSCall node #141 with frequency 6849.13, 1 target(s):
+  - target: 0x8633af090 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>}, bytecode size: 42
+[completed compiling 0x3e2929601b59 <JSFunction twist (sfi = 0x1bfb787e7b89)> (target TURBOFAN) - took 0.000, 0.750, 0.000 ms]
+[completed optimizing 0x3e2929601b59 <JSFunction twist (sfi = 0x1bfb787e7b89)> (target TURBOFAN)]
+Inlining 0x8633af090 {0x2c8d0ac8de19 <SharedFunctionInfo normalized>} into 0x8633ae2b8 {0x2bb1d63959b1 <SharedFunctionInfo fill>}
+Considering 0x8633af320 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} for inlining with 0x8633af548 {0x07637aa49139 <FeedbackVector[23]>}
+Considering 0x8633af320 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} for inlining with 0x8633af548 {0x07637aa49139 <FeedbackVector[23]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #177 with frequency 6848.13, 1 target(s):
+  - target: 0x8633af320 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+- candidate: JSCall node #169 with frequency 6848.13, 1 target(s):
+  - target: 0x8633af320 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+Inlining 0x8633af320 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} into 0x8633ae2b8 {0x2bb1d63959b1 <SharedFunctionInfo fill>}
+Considering 0x863310220 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x863310770 {0x07637aa48f01 <FeedbackVector[64]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #169 with frequency 6848.13, 1 target(s):
+  - target: 0x8633af320 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>}, bytecode size: 130
+- candidate: JSCall node #223 with frequency 10.2517, 1 target(s):
+  - target: 0x863310220 {0x1bfb787e7b89 <SharedFunctionInfo twist>}, bytecode size: 246
+Inlining 0x8633af320 {0x2c8d0ac8ddc1 <SharedFunctionInfo mt19937>} into 0x8633ae2b8 {0x2bb1d63959b1 <SharedFunctionInfo fill>}
+Considering 0x863310220 {0x1bfb787e7b89 <SharedFunctionInfo twist>} for inlining with 0x863310770 {0x07637aa48f01 <FeedbackVector[64]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #327 with frequency 10.2517, 1 target(s):
+  - target: 0x863310220 {0x1bfb787e7b89 <SharedFunctionInfo twist>}, bytecode size: 246
+- candidate: JSCall node #223 with frequency 10.2517, 1 target(s):
+  - target: 0x863310220 {0x1bfb787e7b89 <SharedFunctionInfo twist>}, bytecode size: 246
+Inlining 0x863310220 {0x1bfb787e7b89 <SharedFunctionInfo twist>} into 0x8633ae2b8 {0x2bb1d63959b1 <SharedFunctionInfo fill>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #223 with frequency 10.2517, 1 target(s):
+  - target: 0x863310220 {0x1bfb787e7b89 <SharedFunctionInfo twist>}, bytecode size: 246
+Inlining 0x863310220 {0x1bfb787e7b89 <SharedFunctionInfo twist>} into 0x8633ae2b8 {0x2bb1d63959b1 <SharedFunctionInfo fill>}
+[completed compiling 0x35ab5d64c1d9 <JSFunction uniform1 (sfi = 0x2c8d0ac92ae1)> (target TURBOFAN) - took 0.000, 1.666, 0.000 ms]
+[completed optimizing 0x35ab5d64c1d9 <JSFunction uniform1 (sfi = 0x2c8d0ac92ae1)> (target TURBOFAN)]
+[completed compiling 0x1bfb787d0c59 <JSFunction fill (sfi = 0x2bb1d63959b1)> (target TURBOFAN) OSR - took 0.000, 2.958, 0.000 ms]
+[completed optimizing 0x1bfb787d0c59 <JSFunction fill (sfi = 0x2bb1d63959b1)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: fill, osr offset: 54]
+[OSR - setting osr urgency. function: fill, old urgency: 0, new urgency: 1]
+[OSR - entry. function: fill, osr offset: 54]
+[OSR - entry. function: fill, osr offset: 54]
+[marking 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: checksum, old urgency: 0, new urgency: 1]
+[OSR - compilation started. function: checksum, osr offset: 85, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: checksum, osr offset: 85, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN) OSR - took 0.000, 0.334, 0.000 ms]
+[completed optimizing 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: checksum, osr offset: 85]
+[OSR - entry. function: checksum, osr offset: 85]
+[bailout (kind: deopt-eager, reason: Insufficient type feedback for binary operation): begin. deoptimizing 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)>, 0x1358b9ecb919 <Code TURBOFAN>, opt id 20, bytecode offset 91, deopt exit 9, FP to SP delta 160, caller SP 0x00016fa56050, pc 0x00010b6ee240]
+[OSR - entry. function: checksum, osr offset: 85]
+[bailout (kind: deopt-eager, reason: Insufficient type feedback for binary operation): begin. deoptimizing 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)>, 0x1358b9ecb919 <Code TURBOFAN>, opt id 20, bytecode offset 91, deopt exit 9, FP to SP delta 160, caller SP 0x00016fa56050, pc 0x00010b6ee240]
+[marking 0x217f17f478b9 <JSFunction zeros (sfi = 0x3b168bb14d29)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: zeros, old urgency: 0, new urgency: 1]
+[OSR - compilation started. function: zeros, osr offset: 127, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x217f17f478b9 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: zeros, osr offset: 127, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x217f17f478b9 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN) OSR - took 0.000, 0.458, 0.000 ms]
+[completed optimizing 0x217f17f478b9 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: zeros, osr offset: 127]
+[OSR - setting osr urgency. function: zeros, old urgency: 0, new urgency: 1]
+[OSR - entry. function: zeros, osr offset: 127]
+[marking 0x3b168bb3fde9 <JSFunction ddot (sfi = 0x3b168bb19131)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x3b168bb3fde9 <JSFunction ddot (sfi = 0x3b168bb19131)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x3b168bb3fde9 <JSFunction ddot (sfi = 0x3b168bb19131)> (target TURBOFAN) - took 0.000, 0.542, 0.125 ms]
+[completed optimizing 0x3b168bb3fde9 <JSFunction ddot (sfi = 0x3b168bb19131)> (target TURBOFAN)]
+[marking 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: blocked, old urgency: 0, new urgency: 1]
+[OSR - setting osr urgency. function: blocked, old urgency: 1, new urgency: 2]
+[OSR - compilation started. function: blocked, osr offset: 325, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: blocked, osr offset: 325, mode: ConcurrencyMode::kConcurrent]
+Considering 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} for inlining with 0x8633a71c0 {0x07637aa4dbd9 <FeedbackVector[71]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #226 with frequency 33059, 1 target(s):
+  - target: 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>}, bytecode size: 327
+Inlining 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} into 0x8633a62b8 {0x3b168bb14e31 <SharedFunctionInfo blocked>}
+[completed compiling 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR - took 0.000, 2.291, 0.000 ms]
+[completed optimizing 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: blocked, osr offset: 325]
+[OSR - entry. function: blocked, osr offset: 325]
+[bailout (kind: deopt-eager, reason: Insufficient type feedback for compare operation): begin. deoptimizing 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)>, 0x1166e1791e39 <Code TURBOFAN>, opt id 23, bytecode offset 21, deopt exit 57, FP to SP delta 608, caller SP 0x00016fa55cf8, pc 0x00010b6f0de0]
+[marking 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: blocked, old urgency: 0, new urgency: 1]
+[OSR - setting osr urgency. function: blocked, old urgency: 1, new urgency: 2]
+[OSR - compilation started. function: blocked, osr offset: 325, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: blocked, osr offset: 325, mode: ConcurrencyMode::kConcurrent]
+Considering 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} for inlining with 0x8633a7310 {0x07637aa4dbd9 <FeedbackVector[71]>}
+Considering 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} for inlining with 0x8633a7310 {0x07637aa4dbd9 <FeedbackVector[71]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #444 with frequency 91090, 1 target(s):
+  - target: 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>}, bytecode size: 327
+- candidate: JSCall node #226 with frequency 91090, 1 target(s):
+  - target: 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>}, bytecode size: 327
+Inlining 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} into 0x8633a62b8 {0x3b168bb14e31 <SharedFunctionInfo blocked>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #226 with frequency 91090, 1 target(s):
+  - target: 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>}, bytecode size: 327
+Inlining 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} into 0x8633a62b8 {0x3b168bb14e31 <SharedFunctionInfo blocked>}
+[completed compiling 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR - took 0.000, 3.292, 0.000 ms]
+[completed optimizing 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: blocked, osr offset: 325]
+[OSR - setting osr urgency. function: blocked, old urgency: 0, new urgency: 1]
+[OSR - entry. function: blocked, osr offset: 325]
+[marking 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: freivalds, old urgency: 0, new urgency: 1]
+[OSR - compilation started. function: freivalds, osr offset: 224, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: freivalds, osr offset: 224, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR - took 0.041, 1.000, 0.000 ms]
+[completed optimizing 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: freivalds, osr offset: 224]
+[OSR - entry. function: freivalds, osr offset: 224]
+[bailout (kind: deopt-eager, reason: Insufficient type feedback for generic named access): begin. deoptimizing 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)>, 0x1358b9ecd8f9 <Code TURBOFAN>, opt id 25, bytecode offset 237, deopt exit 23, FP to SP delta 368, caller SP 0x00016fa56098, pc 0x00010b6ec460]
+[OSR - setting osr urgency. function: freivalds, old urgency: 0, new urgency: 1]
+[OSR - compilation started. function: freivalds, osr offset: 673, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: freivalds, osr offset: 673, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR - took 0.000, 1.583, 0.000 ms]
+[completed optimizing 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: freivalds, osr offset: 673]
+[OSR - entry. function: freivalds, osr offset: 673]
+[bailout (kind: deopt-eager, reason: Insufficient type feedback for compare operation): begin. deoptimizing 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)>, 0x1358b9ecdf39 <Code TURBOFAN>, opt id 26, bytecode offset 690, deopt exit 38, FP to SP delta 416, caller SP 0x00016fa56098, pc 0x00010b6f42f4]
+[marking 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: checksum, old urgency: 0, new urgency: 1]
+[OSR - compilation started. function: checksum, osr offset: 85, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: checksum, osr offset: 85, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN) OSR - took 0.000, 0.500, 0.000 ms]
+[completed optimizing 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: checksum, osr offset: 85]
+[OSR - entry. function: checksum, osr offset: 85]
+[compiling method 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[OSR - entry. function: checksum, osr offset: 85]
+Cannot consider 0x8633a66e0 {0x078a2b83c839 <FeedbackCell[many closures]>} for inlining (no feedback vector)
+[completed compiling 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN) - took 0.000, 0.541, 0.000 ms]
+[completed optimizing 0x1bfb787d0c99 <JSFunction checksum (sfi = 0x2bb1d6395a09)> (target TURBOFAN)]
+[marking 0x1414af854909 <JSFunction zeros (sfi = 0x3b168bb14d29)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: zeros, old urgency: 0, new urgency: 1]
+[OSR - compilation started. function: zeros, osr offset: 127, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x1414af854909 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: zeros, osr offset: 127, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x1414af854909 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN) OSR - took 0.000, 0.500, 0.000 ms]
+[completed optimizing 0x1414af854909 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: zeros, osr offset: 127]
+[OSR - setting osr urgency. function: zeros, old urgency: 0, new urgency: 1]
+[OSR - entry. function: zeros, osr offset: 127]
+[marking 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: blocked, old urgency: 0, new urgency: 1]
+[OSR - setting osr urgency. function: blocked, old urgency: 1, new urgency: 2]
+[OSR - compilation started. function: blocked, osr offset: 325, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: blocked, osr offset: 325, mode: ConcurrencyMode::kConcurrent]
+Considering 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} for inlining with 0x8633a7310 {0x07637aa4dbd9 <FeedbackVector[71]>}
+Considering 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} for inlining with 0x8633a7310 {0x07637aa4dbd9 <FeedbackVector[71]>}
+2 candidate(s) for inlining:
+- candidate: JSCall node #444 with frequency 59012.7, 1 target(s):
+  - target: 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>}, bytecode size: 327
+- candidate: JSCall node #226 with frequency 59012.7, 1 target(s):
+  - target: 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>}, bytecode size: 327
+Inlining 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} into 0x8633a62b8 {0x3b168bb14e31 <SharedFunctionInfo blocked>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #226 with frequency 59012.7, 1 target(s):
+  - target: 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>}, bytecode size: 327
+Inlining 0x8633a6c58 {0x3b168bb19131 <SharedFunctionInfo ddot>} into 0x8633a62b8 {0x3b168bb14e31 <SharedFunctionInfo blocked>}
+[completed compiling 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR - took 0.000, 3.125, 0.000 ms]
+[completed optimizing 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: blocked, osr offset: 325]
+[OSR - setting osr urgency. function: blocked, old urgency: 0, new urgency: 1]
+[OSR - entry. function: blocked, osr offset: 325]
+[compiling method 0x1414af854909 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+[OSR - entry. function: zeros, osr offset: 127]
+Considering 0x8633a65c8 {0x3b168bb15d49 <SharedFunctionInfo isRowMajor>} for inlining with 0x8633a6b80 {0x3aa903a20f19 <FeedbackVector[15]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #38 with frequency 0.5, 1 target(s):
+  - target: 0x8633a65c8 {0x3b168bb15d49 <SharedFunctionInfo isRowMajor>}, bytecode size: 73
+Inlining 0x8633a65c8 {0x3b168bb15d49 <SharedFunctionInfo isRowMajor>} into 0x8633a62b8 {0x3b168bb14d29 <SharedFunctionInfo zeros>}
+Considering 0x8633a7280 {0x2b4c8def0261 <SharedFunctionInfo abs>} for inlining with 0x8633a7730 {0x07637aa4d9b1 <FeedbackVector[6]>}
+Inlining small function(s) at call site #170:JSCall
+Inlining 0x8633a7280 {0x2b4c8def0261 <SharedFunctionInfo abs>} into 0x8633a62b8 {0x3b168bb14d29 <SharedFunctionInfo zeros>}
+Considering 0x8633a7280 {0x2b4c8def0261 <SharedFunctionInfo abs>} for inlining with 0x8633a7730 {0x07637aa4d9b1 <FeedbackVector[6]>}
+Inlining small function(s) at call site #195:JSCall
+Inlining 0x8633a7280 {0x2b4c8def0261 <SharedFunctionInfo abs>} into 0x8633a62b8 {0x3b168bb14d29 <SharedFunctionInfo zeros>}
+[compiling method 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]
+Considering 0x8633bef20 {0x3b168bb19131 <SharedFunctionInfo ddot>} for inlining with 0x8633bf310 {0x07637aa4dbd9 <FeedbackVector[71]>}
+1 candidate(s) for inlining:
+- candidate: JSCall node #213 with frequency 63749.2, 1 target(s):
+  - target: 0x8633bef20 {0x3b168bb19131 <SharedFunctionInfo ddot>}, bytecode size: 327
+Inlining 0x8633bef20 {0x3b168bb19131 <SharedFunctionInfo ddot>} into 0x8633be2b8 {0x3b168bb14e31 <SharedFunctionInfo blocked>}
+[OSR - entry. function: blocked, osr offset: 325]
+[completed compiling 0x1414af854909 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN) - took 0.000, 1.209, 0.000 ms]
+[completed optimizing 0x1414af854909 <JSFunction zeros (sfi = 0x3b168bb14d29)> (target TURBOFAN)]
+[completed compiling 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN) - took 0.000, 1.750, 0.000 ms]
+[completed optimizing 0x3b168bb3fe51 <JSFunction blocked (sfi = 0x3b168bb14e31)> (target TURBOFAN)]
+MEASURE_START
+SAMPLE 0
+SAMPLE 1
+SAMPLE 2
+SAMPLE 3
+SAMPLE 4
+SAMPLE 5
+SAMPLE 6
+SAMPLE 7
+SAMPLE 8
+SAMPLE 9
+MEASURE_END
+[marking 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[OSR - setting osr urgency. function: freivalds, old urgency: 0, new urgency: 1]
+[OSR - compilation started. function: freivalds, osr offset: 224, mode: ConcurrencyMode::kConcurrent]
+[compiling method 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR, mode: ConcurrencyMode::kConcurrent]
+[OSR - unavailable (failed or in progress). function: freivalds, osr offset: 224, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR - took 0.000, 2.083, 0.042 ms]
+[completed optimizing 0x1bfb787d0cd9 <JSFunction freivalds (sfi = 0x2bb1d6395ab9)> (target TURBOFAN) OSR]
+[OSR - compilation finished. function: freivalds, osr offset: 224]
+[OSR - entry. function: freivalds, osr offset: 224]
+RESULT {"proc":{"campaign":"diagnostics","stage":"diagnostics","experiment":"diagnostics","block_id":"diag.n512","pos_in_block":0,"proc_id":"diag.A0.n512","alg":"A0","params":null,"M":512,"N":512,"K":512,"order":"row-major","transA":"no-transpose","transB":"no-transpose","ld_pad":0,"alpha":1,"beta":0,"seed":2212628651,"batch":1,"k":10,"warmup_calls":3,"warmup_min_seconds":0.25,"warmup_target_invocations":4000,"warmup_max_seconds":2,"depth":null,"lda":512,"ldb":512,"ldc":512,"exec_argv":["--expose-gc","--trace-opt","--trace-deopt","--trace-osr","--trace-turbo-inlining"],"node_options":"","env_pad_bytes":0,"pid":36140,"setup_ns":11552209,"first_call_ns":211828333,"warmup_ns":[206647583,204629875,189968792,190156250,189642042,189617166,191625292,190894166,192048417,190827292,196299875],"warmup_calls_effective":11,"warmup_elapsed_ns":2132390417,"warmup_invocations_per_call":1,"warmup_invocations_est":11,"warmup_target_met":false,"gate":{"rel":1.4745532346267067e-17,"intact":true,"pass":true},"end_gate":{"rel":1.4745532346267067e-17,"intact":true,"pass":true},"sink":-23.839197009835953,"max_rss_kib":69200,"per_call_median_ns":192964458,"first_sample_ratio":1.036758067249883,"flags":["warmup_suspect"],"flag_counts":{"gc":0,"preempt":0,"slow_mode":0,"tukey3":0,"flagged":0},"excluded":false,"exclusion_reason":null},"samples":[{"proc_id":"diag.A0.n512","i":0,"batch":1,"t_ns":196307375,"per_call_ns":196307375,"wall_ns":196307375,"cpu_us":195621,"minflt":2,"majflt":0,"ivcsw":114,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":1,"batch":1,"t_ns":200547709,"per_call_ns":200547709,"wall_ns":200547709,"cpu_us":199007,"minflt":0,"majflt":0,"ivcsw":155,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":2,"batch":1,"t_ns":194120708,"per_call_ns":194120708,"wall_ns":194120708,"cpu_us":194147,"minflt":0,"majflt":0,"ivcsw":5,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":3,"batch":1,"t_ns":200727750,"per_call_ns":200727750,"wall_ns":200727750,"cpu_us":195571,"minflt":0,"majflt":0,"ivcsw":108,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":4,"batch":1,"t_ns":194483000,"per_call_ns":194483000,"wall_ns":194483000,"cpu_us":193904,"minflt":0,"majflt":0,"ivcsw":111,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":5,"batch":1,"t_ns":190283958,"per_call_ns":190283958,"wall_ns":190283958,"cpu_us":190233,"minflt":1,"majflt":0,"ivcsw":19,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":6,"batch":1,"t_ns":189347333,"per_call_ns":189347333,"wall_ns":189347333,"cpu_us":189369,"minflt":0,"majflt":0,"ivcsw":0,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":7,"batch":1,"t_ns":191808208,"per_call_ns":191808208,"wall_ns":191808208,"cpu_us":191436,"minflt":0,"majflt":0,"ivcsw":84,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":8,"batch":1,"t_ns":189123333,"per_call_ns":189123333,"wall_ns":189123333,"cpu_us":189149,"minflt":0,"majflt":0,"ivcsw":0,"gc_n":0,"gc_us":0,"flags":[]},{"proc_id":"diag.A0.n512","i":9,"batch":1,"t_ns":188981458,"per_call_ns":188981458,"wall_ns":188981458,"cpu_us":189014,"minflt":0,"majflt":0,"ivcsw":0,"gc_n":0,"gc_us":0,"flags":[]}]}

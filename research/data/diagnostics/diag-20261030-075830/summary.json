@@ -1,0 +1,226 @@
+{
+  "schema": "sw-bench/diagnostics/1",
+  "id": "diag-20261030-075830",
+  "created_at": "2026-10-30T07:58:41.399Z",
+  "complete": true,
+  "node": "v22.14.0",
+  "v8": "12.4.254.21-node.22",
+  "protocol_revision": 2,
+  "tau": 64,
+  "sizes": [
+    48,
+    512
+  ],
+  "algs": [
+    "A0",
+    "A2"
+  ],
+  "marker": "MEASURE_START",
+  "criterion": "no compile/optimize/OSR/deopt event naming an element-loop kernel (functions) after MEASURE_START; element-loop kernels inlined into a function compiled after it (kernel_inlined) and report_only functions are reported, never failed",
+  "functions": [
+    "blocked",
+    "naive",
+    "ddot",
+    "zeros",
+    "scal",
+    "add",
+    "sub",
+    "maxAbs",
+    "axpby",
+    "packed"
+  ],
+  "report_only_functions": [
+    "winograd",
+    "recurse",
+    "classic",
+    "dgemmsw",
+    "dgemm",
+    "resolve",
+    "str2enum",
+    "isRowMajor",
+    "isTransposed",
+    "isfinite",
+    "depth",
+    "workspaceLength",
+    "max",
+    "abs",
+    "pow",
+    "floor",
+    "a0",
+    "sw",
+    "c1",
+    "c2"
+  ],
+  "warmup_calls": 3,
+  "warmup_min_seconds": 0.25,
+  "pass": true,
+  "runs": [
+    {
+      "alg": "A0",
+      "n": 48,
+      "tau": null,
+      "size_status": "exploratory",
+      "pass": true,
+      "reason": null,
+      "k": 30,
+      "batch": 118,
+      "kernel_events_before": 31,
+      "kernel_events_after": 0,
+      "offending": [],
+      "report_only": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 36,
+        "events": []
+      },
+      "kernel_inlined": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 4,
+        "events": []
+      },
+      "samples_seen": 30,
+      "end_marker_found": true,
+      "child": {
+        "warmup_calls_effective": 4000,
+        "warmup_elapsed_ns": 641134625,
+        "first_call_ns": 1858292,
+        "per_call_median_ns": 157094.98305084746,
+        "first_sample_ratio": 1.001463739612591,
+        "flags": [],
+        "depth": null
+      },
+      "trace_file": "research/data/diagnostics/diag-20261030-075830/A0-n48.trace.txt"
+    },
+    {
+      "alg": "A2",
+      "n": 48,
+      "tau": 64,
+      "size_status": "exploratory",
+      "pass": true,
+      "reason": null,
+      "k": 30,
+      "batch": 118,
+      "kernel_events_before": 31,
+      "kernel_events_after": 0,
+      "offending": [],
+      "report_only": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 38,
+        "events": []
+      },
+      "kernel_inlined": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 4,
+        "events": []
+      },
+      "samples_seen": 30,
+      "end_marker_found": true,
+      "child": {
+        "warmup_calls_effective": 4000,
+        "warmup_elapsed_ns": 639751167,
+        "first_call_ns": 1854042,
+        "per_call_median_ns": 157291.13559322036,
+        "first_sample_ratio": 1.005446731066164,
+        "flags": [],
+        "depth": 0
+      },
+      "trace_file": "research/data/diagnostics/diag-20261030-075830/A2-n48.trace.txt"
+    },
+    {
+      "alg": "A0",
+      "n": 512,
+      "tau": null,
+      "size_status": "pre-registered",
+      "pass": true,
+      "reason": null,
+      "k": 10,
+      "batch": 1,
+      "kernel_events_before": 64,
+      "kernel_events_after": 0,
+      "offending": [],
+      "report_only": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 4,
+        "events": []
+      },
+      "kernel_inlined": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 6,
+        "events": []
+      },
+      "samples_seen": 10,
+      "end_marker_found": true,
+      "child": {
+        "warmup_calls_effective": 11,
+        "warmup_elapsed_ns": 2169699042,
+        "first_call_ns": 292851292,
+        "per_call_median_ns": 192740125,
+        "first_sample_ratio": 0.9991242647331272,
+        "flags": [],
+        "depth": null
+      },
+      "trace_file": "research/data/diagnostics/diag-20261030-075830/A0-n512.trace.txt"
+    },
+    {
+      "alg": "A2",
+      "n": 512,
+      "tau": 64,
+      "size_status": "pre-registered",
+      "pass": true,
+      "reason": null,
+      "k": 10,
+      "batch": 1,
+      "kernel_events_before": 132,
+      "kernel_events_after": 0,
+      "offending": [],
+      "report_only": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 32,
+        "events": []
+      },
+      "kernel_inlined": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 5,
+        "events": []
+      },
+      "samples_seen": 10,
+      "end_marker_found": true,
+      "child": {
+        "warmup_calls_effective": 12,
+        "warmup_elapsed_ns": 1705319625,
+        "first_call_ns": 151132792,
+        "per_call_median_ns": 141698062.5,
+        "first_sample_ratio": 1.0632413112506296,
+        "flags": [
+          "warmup_suspect",
+          "early_slow"
+        ],
+        "depth": 3
+      },
+      "trace_file": "research/data/diagnostics/diag-20261030-075830/A2-n512.trace.txt"
+    }
+  ]
+}

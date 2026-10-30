@@ -1,0 +1,271 @@
+{
+  "schema": "sw-bench/diagnostics/1",
+  "id": "diag-20261030-080545",
+  "created_at": "2026-10-30T08:08:28.088Z",
+  "complete": true,
+  "node": "v22.14.0",
+  "v8": "12.4.254.21-node.22",
+  "protocol_revision": 2,
+  "tau": 64,
+  "sizes": [
+    512,
+    2048
+  ],
+  "algs": [
+    "A0",
+    "A2"
+  ],
+  "marker": "MEASURE_START",
+  "criterion": "no compile/optimize/OSR/deopt event naming an element-loop kernel (functions) after MEASURE_START; element-loop kernels inlined into a function compiled after it (kernel_inlined) and report_only functions are reported, never failed",
+  "functions": [
+    "blocked",
+    "naive",
+    "ddot",
+    "zeros",
+    "scal",
+    "add",
+    "sub",
+    "maxAbs",
+    "axpby",
+    "packed"
+  ],
+  "report_only_functions": [
+    "winograd",
+    "recurse",
+    "classic",
+    "dgemmsw",
+    "dgemm",
+    "resolve",
+    "str2enum",
+    "isRowMajor",
+    "isTransposed",
+    "isfinite",
+    "depth",
+    "workspaceLength",
+    "max",
+    "abs",
+    "pow",
+    "floor",
+    "a0",
+    "sw",
+    "c1",
+    "c2"
+  ],
+  "warmup_calls": 3,
+  "warmup_min_seconds": 0.25,
+  "pass": true,
+  "runs": [
+    {
+      "alg": "A0",
+      "n": 512,
+      "tau": null,
+      "size_status": "pre-registered",
+      "pass": true,
+      "reason": null,
+      "k": 10,
+      "batch": 1,
+      "kernel_events_before": 65,
+      "kernel_events_after": 0,
+      "offending": [],
+      "report_only": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 4,
+        "events": []
+      },
+      "kernel_inlined": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 6,
+        "events": []
+      },
+      "samples_seen": 10,
+      "end_marker_found": true,
+      "child": {
+        "warmup_calls_effective": 11,
+        "warmup_elapsed_ns": 2132390417,
+        "first_call_ns": 211828333,
+        "per_call_median_ns": 192964458,
+        "first_sample_ratio": 1.036758067249883,
+        "flags": [
+          "warmup_suspect"
+        ],
+        "depth": null
+      },
+      "trace_file": "research/data/diagnostics/diag-20261030-080545/A0-n512.trace.txt"
+    },
+    {
+      "alg": "A2",
+      "n": 512,
+      "tau": 64,
+      "size_status": "pre-registered",
+      "pass": true,
+      "reason": null,
+      "k": 10,
+      "batch": 1,
+      "kernel_events_before": 131,
+      "kernel_events_after": 0,
+      "offending": [],
+      "report_only": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 33,
+        "events": []
+      },
+      "kernel_inlined": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 5,
+        "events": []
+      },
+      "samples_seen": 10,
+      "end_marker_found": true,
+      "child": {
+        "warmup_calls_effective": 12,
+        "warmup_elapsed_ns": 1673843916,
+        "first_call_ns": 152850209,
+        "per_call_median_ns": 137086208.5,
+        "first_sample_ratio": 0.9975220669387219,
+        "flags": [],
+        "depth": 3
+      },
+      "trace_file": "research/data/diagnostics/diag-20261030-080545/A2-n512.trace.txt"
+    },
+    {
+      "alg": "A0",
+      "n": 2048,
+      "tau": null,
+      "size_status": "pre-registered",
+      "pass": true,
+      "reason": null,
+      "k": 3,
+      "batch": 1,
+      "kernel_events_before": 77,
+      "kernel_events_after": 0,
+      "offending": [],
+      "report_only": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 4,
+        "events": []
+      },
+      "kernel_inlined": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 8,
+        "events": []
+      },
+      "samples_seen": 3,
+      "end_marker_found": true,
+      "child": {
+        "warmup_calls_effective": 3,
+        "warmup_elapsed_ns": 43883621708,
+        "first_call_ns": 15101789875,
+        "per_call_median_ns": 13973475125,
+        "first_sample_ratio": 1.0026691997376147,
+        "flags": [],
+        "depth": null
+      },
+      "trace_file": "research/data/diagnostics/diag-20261030-080545/A0-n2048.trace.txt"
+    },
+    {
+      "alg": "A2",
+      "n": 2048,
+      "tau": 64,
+      "size_status": "pre-registered",
+      "pass": true,
+      "reason": null,
+      "k": 3,
+      "batch": 1,
+      "kernel_events_before": 109,
+      "kernel_events_after": 0,
+      "offending": [],
+      "report_only": {
+        "count": 4,
+        "first_sample": 1,
+        "after_end": 0,
+        "by_function": {
+          "winograd": {
+            "count": 4,
+            "first_sample": 1
+          }
+        },
+        "events_before": 33,
+        "events": [
+          {
+            "line": 964,
+            "kind": "optimize",
+            "functions": [
+              "winograd"
+            ],
+            "sample": 1,
+            "phase": "measure",
+            "text": "[marking 0x06417871ae69 <JSFunction winograd (sfi = 0x3e4b3c92129)> for optimization to TURBOFAN, ConcurrencyMode::kConcurrent, reason: hot and stable]"
+          },
+          {
+            "line": 965,
+            "kind": "compile",
+            "functions": [
+              "winograd"
+            ],
+            "sample": 1,
+            "phase": "measure",
+            "text": "[compiling method 0x06417871ae69 <JSFunction winograd (sfi = 0x3e4b3c92129)> (target TURBOFAN), mode: ConcurrencyMode::kConcurrent]"
+          },
+          {
+            "line": 1018,
+            "kind": "compile",
+            "functions": [
+              "winograd"
+            ],
+            "sample": 1,
+            "phase": "measure",
+            "text": "[completed compiling 0x06417871ae69 <JSFunction winograd (sfi = 0x3e4b3c92129)> (target TURBOFAN) - took 0.042, 3.917, 0.041 ms]"
+          },
+          {
+            "line": 1019,
+            "kind": "compile",
+            "functions": [
+              "winograd"
+            ],
+            "sample": 1,
+            "phase": "measure",
+            "text": "[completed optimizing 0x06417871ae69 <JSFunction winograd (sfi = 0x3e4b3c92129)> (target TURBOFAN)]"
+          }
+        ]
+      },
+      "kernel_inlined": {
+        "count": 0,
+        "first_sample": null,
+        "after_end": 0,
+        "by_function": {},
+        "events_before": 5,
+        "events": []
+      },
+      "samples_seen": 3,
+      "end_marker_found": true,
+      "child": {
+        "warmup_calls_effective": 3,
+        "warmup_elapsed_ns": 22981617500,
+        "first_call_ns": 7630628625,
+        "per_call_median_ns": 7402136208,
+        "first_sample_ratio": 1.0080189276300886,
+        "flags": [],
+        "depth": 4
+      },
+      "trace_file": "research/data/diagnostics/diag-20261030-080545/A2-n2048.trace.txt"
+    }
+  ]
+}
