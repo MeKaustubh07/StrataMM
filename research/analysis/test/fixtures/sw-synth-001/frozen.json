@@ -1,0 +1,35 @@
+{
+ "schema": "sw-bench/2",
+ "type": "frozen",
+ "campaign": "sw-synth-001",
+ "t_wall": "2026-10-30T23:18:02.000Z",
+ "tau_star": 64,
+ "levels": 4,
+ "batch_by_n": {
+  "32": 263,
+  "64": 33,
+  "128": 5
+ },
+ "pilot_summary": {
+  "rule": "§5.1",
+  "select_sizes": [
+   512,
+   1024
+  ],
+  "taus": [
+   32,
+   64,
+   128
+  ],
+  "eligible": [
+   32,
+   64
+  ],
+  "worst_ratio": {
+   "32": 1.0084033613445378,
+   "64": 1,
+   "128": 1.0666666666666667
+  },
+  "fallback": false
+ }
+}

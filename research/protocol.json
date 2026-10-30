@@ -1,0 +1,768 @@
+{
+  "schema": "sw-bench/2",
+  "name": "StrataMM campaign design",
+  "protocol_doc": "docs/research-protocol.md",
+  "protocol_revision": 2,
+  "protocol_date": "2026-10-30",
+  "master_seed": 20261030,
+  "machine": {
+    "model": "Mac14,2",
+    "node": "22.14.0"
+  },
+  "paths": {
+    "child": "research/harness/child.js",
+    "memory": "research/harness/memory.js",
+    "env": "research/harness/env.js",
+    "accuracy": "research/accuracy/run.js",
+    "e1": [
+      "research/correctness/e1.js",
+      "research/correctness/run.js",
+      "research/e1/run.js",
+      "research/harness/e1.js",
+      "research/accuracy/e1.js"
+    ],
+    "data": "research/data",
+    "package_base": "lib/node_modules/@stdlib/blas/ext/base/dgemmsw/lib/base.js"
+  },
+  "time_model": {
+    "_comment": "budget only (orchestrator --dry-run): T_A0 = 2MNK/gflops_A0; SW = T_A0 / ((8/7)^L * sw_efficiency) for L >= 1; C1 = T_A0 / c1_speedup; C2 = T_A0 / c2_speedup",
+    "gflops_A0": 1300000000,
+    "sw_efficiency": 0.93,
+    "c1_speedup": 2,
+    "c2_speedup": 1,
+    "startup_s": 0.07,
+    "env_check_s": 0.25,
+    "E6_minutes": 40
+  },
+  "timing": {
+    "warmup_calls": 3,
+    "warmup_min_seconds": 0.25,
+    "_warmup_comment": "after the gate and gc(): untimed full-size calls until at least warmup_calls calls AND warmup_min_seconds have elapsed AND (the arm has made warmup_target_invocations dgemm invocations, estimated as 1 / 7^L / 8^L per call for A0-C1 / SW / C2, OR warmup_max_seconds have elapsed); every duration recorded; then gc(). Rationale: V8 compiles the shared dgemm entry with blocked/ddot inlined after ~3000 invocations (protocol amendment 2026-10-30c).",
+    "sample_target_s": 0.02,
+    "pause_s": 0.5,
+    "pause_large_s": 2,
+    "pause_large_min_n": 1024,
+    "tier_size": "n for square shapes, round(cbrt(M*N*K)) otherwise",
+    "tiers": [
+      {
+        "name": "S",
+        "max_n": 128,
+        "k": 30,
+        "r": 10
+      },
+      {
+        "name": "M",
+        "max_n": 384,
+        "k": 20,
+        "r": 10
+      },
+      {
+        "name": "L",
+        "max_n": 1025,
+        "k": 10,
+        "r": 6
+      },
+      {
+        "name": "XL",
+        "max_n": null,
+        "k": 3,
+        "r": 4,
+        "label": "low replication"
+      }
+    ],
+    "defaults": {
+      "order": "row-major",
+      "transA": "no-transpose",
+      "transB": "no-transpose",
+      "alpha": 1,
+      "beta": 0,
+      "ld_pad": 0
+    },
+    "child_flags": [
+      "--expose-gc"
+    ],
+    "env_pad_max": 4095,
+    "child_timeout": {
+      "min_s": 120,
+      "factor": 10
+    },
+    "warmup_target_invocations": 4000,
+    "warmup_max_seconds": 2
+  },
+  "algorithms": {
+    "A0": {
+      "def": "dgemm.ndarray (public API)"
+    },
+    "A1": {
+      "def": "base.js(..., cutoff=1, levels=1)",
+      "cutoff": 1,
+      "levels": 1
+    },
+    "A2": {
+      "def": "base.js(..., tau_star, L_max)",
+      "cutoff": "tau_star",
+      "levels": 4
+    },
+    "C1": {
+      "def": "packed dgemm: B copied to column-major inside the timed call into a per-call buffer, then dgemm"
+    },
+    "C2": {
+      "def": "8-product recursion with SW's split, cutoff, level cap, peeling and leaves",
+      "cutoff": "tau_star",
+      "levels": 4
+    },
+    "SENTINEL": {
+      "def": "A0 at n = 256, LD = 256"
+    }
+  },
+  "sentinel": {
+    "alg": "SENTINEL",
+    "n": 256,
+    "ld_pad": 0,
+    "warmup_calls": 5,
+    "warmup_min_seconds": 0.25,
+    "k": 15,
+    "batch": 1,
+    "seed": 256256,
+    "drift_threshold": 0.03,
+    "baseline_count": 5,
+    "max_consecutive_failures": 3,
+    "pause_s": 60,
+    "warmup_target_invocations": 4000,
+    "warmup_max_seconds": 2
+  },
+  "preflight": {
+    "pause_s": 60,
+    "max_wait_s": 600,
+    "cpu_threshold_pct": 20,
+    "swap_window_s": 30,
+    "swap_growth_tolerance_mb": 1,
+    "pressure_level_required": 1,
+    "thermal_state_required": 0,
+    "blocked_pattern": null,
+    "_blocked_comment": "optional regular expression of processes that must not run during the campaign; the STRATAMM_BLOCKED_PROCESSES environment variable overrides it"
+  },
+  "exclusion": {
+    "pressure_level_min": 2,
+    "thermal_state_min": 2,
+    "flagged_fraction_max": 0.2,
+    "flags": [
+      "preempt",
+      "slow_mode"
+    ],
+    "max_retries": 1,
+    "max_consecutive_child_failures": 3
+  },
+  "pilot": {
+    "r": 2,
+    "select_sizes": [
+      512,
+      1024
+    ],
+    "taus": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "levels": 4,
+    "xl": {
+      "n": 2048,
+      "tau": 64
+    },
+    "batch_sizes": [
+      32,
+      48,
+      64,
+      96,
+      128,
+      160,
+      192
+    ],
+    "band": 1.02,
+    "rule": "t_best(n) = min over tau of the cell median per-call time (cell = median of the non-excluded process medians); tau_star = the largest tau whose cell median is <= band * t_best(n) at every n in select_sizes",
+    "fallback": "only if no tau satisfies the rule: among the taus with data at every select size, the one minimizing max_n median(tau, n) / t_best(n), ties to the larger tau; recorded as selection.fallback = true in frozen.json",
+    "batch_rule": "b(n) = max(1, ceil(sample_target_s / T_A0(n))), T_A0(n) = pilot A0 cell median at n; sizes without a pilot A0 cell scale the nearest measured size (in log n) by 2MNK",
+    "assumed_tau_for_budget": 64
+  },
+  "stage_order": [
+    "pilot",
+    "E2",
+    "E3",
+    "E5",
+    "E4",
+    "E0",
+    "E7",
+    "E6"
+  ],
+  "E2": {
+    "algs": [
+      "A0",
+      "A1",
+      "A2"
+    ],
+    "families": {
+      "P": [
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048
+      ],
+      "O": [
+        255,
+        257,
+        511,
+        513,
+        1023,
+        1025
+      ],
+      "R": [
+        48,
+        96,
+        160,
+        192,
+        320,
+        384,
+        768,
+        1536
+      ]
+    }
+  },
+  "E3": {
+    "sizes": [
+      512,
+      1008,
+      1024
+    ],
+    "ld_pads": [
+      0,
+      8
+    ],
+    "algs": [
+      "A0",
+      "C2",
+      "A2"
+    ],
+    "extra": [
+      {
+        "alg": "C1",
+        "ld_pad": 0
+      }
+    ],
+    "r_by_n": {
+      "512": 10,
+      "default": 6
+    }
+  },
+  "E5": {
+    "r": 6,
+    "algs": [
+      "A0",
+      "A2"
+    ],
+    "layouts": {
+      "n": 512,
+      "combos": [
+        {
+          "order": "row-major",
+          "transA": "no-transpose",
+          "transB": "no-transpose"
+        },
+        {
+          "order": "row-major",
+          "transA": "no-transpose",
+          "transB": "transpose"
+        },
+        {
+          "order": "row-major",
+          "transA": "transpose",
+          "transB": "no-transpose"
+        },
+        {
+          "order": "row-major",
+          "transA": "transpose",
+          "transB": "transpose"
+        },
+        {
+          "order": "column-major",
+          "transA": "no-transpose",
+          "transB": "no-transpose"
+        }
+      ]
+    },
+    "alpha_beta": {
+      "sizes": [
+        512,
+        1024
+      ],
+      "values": [
+        {
+          "alpha": 1,
+          "beta": 1
+        },
+        {
+          "alpha": 0.5,
+          "beta": 2
+        }
+      ]
+    },
+    "rect": {
+      "shapes": [
+        [
+          1024,
+          1024,
+          256
+        ],
+        [
+          256,
+          1024,
+          1024
+        ],
+        [
+          2048,
+          512,
+          512
+        ],
+        [
+          160,
+          1957,
+          957
+        ]
+      ]
+    }
+  },
+  "E4": {
+    "sizes": [
+      512,
+      1024,
+      2048
+    ],
+    "leaf_sizes": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "alg": "A2",
+    "levels": "uncapped: params.levels = the full recursion depth at (n, leaf), cutoff = leaf",
+    "include_A0": false
+  },
+  "E0": {
+    "r": 1,
+    "alg": "A0",
+    "sizes": [
+      64,
+      256,
+      1024
+    ],
+    "orders": [
+      "row-major",
+      "column-major"
+    ],
+    "trans": [
+      [
+        "no-transpose",
+        "no-transpose"
+      ],
+      [
+        "no-transpose",
+        "transpose"
+      ],
+      [
+        "transpose",
+        "no-transpose"
+      ],
+      [
+        "transpose",
+        "transpose"
+      ]
+    ],
+    "ld_pads_at": {
+      "256": [
+        0,
+        8,
+        768
+      ]
+    }
+  },
+  "E7": {
+    "r": 3,
+    "algs": [
+      "A0",
+      "A1",
+      "A2",
+      "C1",
+      "C2"
+    ],
+    "sizes": [
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "betas": [
+      0,
+      1
+    ]
+  },
+  "E6": {
+    "args": [
+      "--campaign",
+      "{campaign}"
+    ],
+    "tiny_args": [
+      "--tiny"
+    ],
+    "timeout_s": 14400
+  },
+  "E1": {
+    "in_campaign": false,
+    "args": [
+      "--campaign",
+      "{campaign}"
+    ],
+    "tiny_args": [
+      "--tiny"
+    ],
+    "timeout_s": 0
+  },
+  "diagnostics": {
+    "_comment": "functions = element-loop kernels: any compile/optimize/OSR/deopt event naming one after MEASURE_START fails the run; inlining of an element-loop kernel into a function compiled after the marker (e.g. blocked into dgemm when the dgemm entry point tiers up; --trace-turbo-inlining) and events of report_only = call-only drivers and wrappers are reported (count, first sample index) and never fail; default_sizes are the pre-registered sizes, sizes the accepted ones (others run as exploratory)",
+    "sizes": [
+      512,
+      1024,
+      2048
+    ],
+    "default_sizes": [
+      512,
+      2048
+    ],
+    "algs": [
+      "A0",
+      "A2"
+    ],
+    "flags": [
+      "--trace-opt",
+      "--trace-deopt",
+      "--trace-osr",
+      "--trace-turbo-inlining"
+    ],
+    "functions": [
+      "blocked",
+      "naive",
+      "ddot",
+      "zeros",
+      "scal",
+      "add",
+      "sub",
+      "maxAbs",
+      "axpby",
+      "packed"
+    ],
+    "report_only": [
+      "winograd",
+      "recurse",
+      "classic",
+      "dgemmsw",
+      "dgemm",
+      "resolve",
+      "str2enum",
+      "isRowMajor",
+      "isTransposed",
+      "isfinite",
+      "depth",
+      "workspaceLength",
+      "max",
+      "abs",
+      "pow",
+      "floor",
+      "a0",
+      "sw",
+      "c1",
+      "c2"
+    ],
+    "marker": "MEASURE_START"
+  },
+  "tiny": {
+    "_comment": "orchestrator --tiny: each section here shallow-replaces the same section above",
+    "time_model": {
+      "gflops_A0": 1300000000,
+      "sw_efficiency": 0.93,
+      "c1_speedup": 2,
+      "c2_speedup": 1,
+      "startup_s": 0.07,
+      "env_check_s": 0.25,
+      "E6_minutes": 2.5
+    },
+    "timing": {
+      "warmup_calls": 3,
+      "warmup_min_seconds": 0.25,
+      "sample_target_s": 0.02,
+      "pause_s": 0.2,
+      "pause_large_s": 0.2,
+      "pause_large_min_n": 1024,
+      "tiers": [
+        {
+          "name": "T",
+          "max_n": null,
+          "k": 3,
+          "r": 2
+        }
+      ],
+      "defaults": {
+        "order": "row-major",
+        "transA": "no-transpose",
+        "transB": "no-transpose",
+        "alpha": 1,
+        "beta": 0,
+        "ld_pad": 0
+      },
+      "child_flags": [
+        "--expose-gc"
+      ],
+      "env_pad_max": 4095,
+      "child_timeout": {
+        "min_s": 60,
+        "factor": 10
+      },
+      "warmup_target_invocations": 4000,
+      "warmup_max_seconds": 0.5
+    },
+    "sentinel": {
+      "alg": "SENTINEL",
+      "n": 128,
+      "ld_pad": 0,
+      "warmup_calls": 3,
+      "warmup_min_seconds": 0.25,
+      "k": 5,
+      "batch": 1,
+      "seed": 128128,
+      "drift_threshold": 0.03,
+      "baseline_count": 5,
+      "max_consecutive_failures": 3,
+      "pause_s": 5,
+      "warmup_target_invocations": 4000,
+      "warmup_max_seconds": 0.5
+    },
+    "preflight": {
+      "pause_s": 5,
+      "max_wait_s": 30,
+      "cpu_threshold_pct": 20,
+      "swap_window_s": 5,
+      "swap_growth_tolerance_mb": 1,
+      "pressure_level_required": 1,
+      "thermal_state_required": 0,
+      "blocked_pattern": null
+    },
+    "pilot": {
+      "r": 2,
+      "select_sizes": [
+        64,
+        96
+      ],
+      "taus": [
+        16,
+        32
+      ],
+      "levels": 4,
+      "xl": {
+        "n": 128,
+        "tau": 16
+      },
+      "batch_sizes": [
+        48,
+        64,
+        96
+      ],
+      "band": 1.02,
+      "assumed_tau_for_budget": 32
+    },
+    "E2": {
+      "algs": [
+        "A0",
+        "A1",
+        "A2"
+      ],
+      "families": {
+        "T": [
+          48,
+          64,
+          96
+        ]
+      }
+    },
+    "E3": {
+      "sizes": [
+        96
+      ],
+      "ld_pads": [
+        0,
+        8
+      ],
+      "algs": [
+        "A0",
+        "C2",
+        "A2"
+      ],
+      "extra": [
+        {
+          "alg": "C1",
+          "ld_pad": 0
+        }
+      ],
+      "r_by_n": {
+        "default": 2
+      }
+    },
+    "E5": {
+      "r": 2,
+      "algs": [
+        "A0",
+        "A2"
+      ],
+      "layouts": {
+        "n": 64,
+        "combos": [
+          {
+            "order": "row-major",
+            "transA": "no-transpose",
+            "transB": "no-transpose"
+          },
+          {
+            "order": "row-major",
+            "transA": "no-transpose",
+            "transB": "transpose"
+          },
+          {
+            "order": "row-major",
+            "transA": "transpose",
+            "transB": "no-transpose"
+          },
+          {
+            "order": "row-major",
+            "transA": "transpose",
+            "transB": "transpose"
+          },
+          {
+            "order": "column-major",
+            "transA": "no-transpose",
+            "transB": "no-transpose"
+          }
+        ]
+      },
+      "alpha_beta": {
+        "sizes": [
+          64
+        ],
+        "values": [
+          {
+            "alpha": 1,
+            "beta": 1
+          },
+          {
+            "alpha": 0.5,
+            "beta": 2
+          }
+        ]
+      },
+      "rect": {
+        "shapes": [
+          [
+            64,
+            96,
+            48
+          ]
+        ]
+      }
+    },
+    "E4": {
+      "sizes": [
+        128
+      ],
+      "leaf_sizes": [
+        16,
+        32
+      ],
+      "alg": "A2",
+      "include_A0": false
+    },
+    "E0": {
+      "r": 1,
+      "alg": "A0",
+      "sizes": [
+        48
+      ],
+      "orders": [
+        "row-major",
+        "column-major"
+      ],
+      "trans": [
+        [
+          "no-transpose",
+          "no-transpose"
+        ],
+        [
+          "no-transpose",
+          "transpose"
+        ],
+        [
+          "transpose",
+          "no-transpose"
+        ],
+        [
+          "transpose",
+          "transpose"
+        ]
+      ],
+      "ld_pads_at": {
+        "48": [
+          0,
+          8,
+          976
+        ]
+      }
+    },
+    "E7": {
+      "r": 1,
+      "algs": [
+        "A0",
+        "A1",
+        "A2",
+        "C1",
+        "C2"
+      ],
+      "sizes": [
+        64
+      ],
+      "betas": [
+        0,
+        1
+      ]
+    },
+    "E6": {
+      "args": [
+        "--campaign",
+        "{campaign}"
+      ],
+      "tiny_args": [
+        "--tiny"
+      ],
+      "timeout_s": 150
+    },
+    "E1": {
+      "in_campaign": false,
+      "args": [
+        "--campaign",
+        "{campaign}"
+      ],
+      "tiny_args": [
+        "--tiny"
+      ],
+      "timeout_s": 120
+    }
+  }
+}
